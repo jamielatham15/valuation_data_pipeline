@@ -6,6 +6,17 @@ services:
       context: .
       dockerfile: ./projects/valuation_pipeline/Dockerfile
     env_file: .env
+    environment:
+      - AWS_ACCESS_KEY: ${AWS_ACCESS_KEY}
+      - AWS_SECRET_KEY: ${AWS_SECRET_KEY}
+      - AWS_RDS_HOST: ${AWS_RDS_HOST}
+      - AWS_RDS_USER: ${AWS_RDS_USER}
+      - AWS_RDS_PASSWORD: ${AWS_RDS_PASSWORD}
+      - AWS_BUCKET_NAME: ${AWS_BUCKET_NAME}
+      - AWS_ACCOUNT_ID: ${AWS_ACCOUNT_ID}
+      - DATA_HOST: ${DATA_HOST}
+      - DATA_USER: ${DATA_USER}
+      - DATA_PASSWORD: ${DATA_PASSWORD}
 
   valuation_frontend:
     build:
@@ -14,3 +25,11 @@ services:
     ports:
       - "5000:5000"
     env_file: .env
+    environment:
+      - AWS_ACCESS_KEY: ${AWS_ACCESS_KEY}
+      - AWS_SECRET_KEY: ${AWS_SECRET_KEY}
+      - AWS_RDS_HOST: ${AWS_RDS_HOST}
+      - AWS_RDS_USER: ${AWS_RDS_USER}
+      - AWS_RDS_PASSWORD: ${AWS_RDS_PASSWORD}
+      - AWS_BUCKET_NAME: ${AWS_BUCKET_NAME}
+      - AWS_ACCOUNT_ID: ${AWS_ACCOUNT_ID}

@@ -1,4 +1,4 @@
-# Valuation Calculator
+# Value Screeners
 Data pipeline and flask site to approximate the intrinsic value of stocks. Uses a number of shorthand valuation techniques to estimate intrinsic value and margin of safety.
 
 Adapted from the following authors:

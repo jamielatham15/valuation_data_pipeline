@@ -32,9 +32,9 @@ def get_downloaded_files():
 
 def download_data():
     """Download the dataset using selenium """
-    host = os.getenv("HOST")
-    user = os.getenv("USER")
-    pswd = os.getenv("PASSWORD")
+    host = os.getenv("DATA_HOST")
+    user = os.getenv("DATA_USER")
+    pswd = os.getenv("DATA_PASSWORD")
 
     before = get_downloaded_files()
 
