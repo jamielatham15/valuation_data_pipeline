@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  valuation_pipeline:
+    build:
+      context: .
+      dockerfile: ./projects/valuation_pipeline/Dockerfile
+    env_file: .env
+
+  valuation_frontend:
+    build:
+      context: .
+      dockerfile: ./projects/valuation_frontend/Dockerfile
+    ports:
+      - "5000:5000"
+    env_file: .env

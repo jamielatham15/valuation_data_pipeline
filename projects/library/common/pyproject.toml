@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "common"
+version = "0.1.0"
+description = ""
+authors = ["Jamie Latham <jamielatham15@gmail.com>"]
+include = ["*.yml"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+selenium = "^4.2.0"
+SQLAlchemy = "^1.4.36"
+PyYAML = "^6.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,117 @@
+raw_data:
+  admin_expenses:                
+    type: float
+    field: "TTM Admin. expenses (m)"
+    required: true
+  beta:                          
+    type: float
+    field: "Beta 1y daily (TR) (vs. Ctry) TTM"
+    required: true
+  borrowing:                     
+    type: float
+    field: "TTM Total borrowing (m)"
+    required: false
+  current_assets:                
+    type: float
+    field: "TTM Current assets (m)"
+    required: true
+  current_liabilities:           
+    type: float
+    field: "TTM Current liabilities (m)"
+    required: true
+  debt:                          
+    type: float
+    field: "TTM Total debt (m)"
+    required: false
+  depreciation_and_amortization: 
+    type: float
+    field: "TTM Deprec. & Amort. (m)"
+    required: true
+  ebit_5y_av:                    
+    type: float
+    field: "EBIT (m) 5y av."
+    required: false
+  leases:                        
+    type: float
+    field: "TTM Total leases (m)"
+    required: false
+  name:                          
+    type: str
+    field: "Name"
+    required: true
+  non_current_assets_5_y_av:     
+    type: float
+    field: "Non-curr. assets (m) 5y av."
+    required: true
+  non_current_assets:            
+    type: float
+    field: "TTM Non-curr. assets (m)"
+    required: true
+  non_current_liabilities:      
+    type: float
+    field: "TTM Non-curr. liabilities (m)"
+    required: true
+  number_of_shares:              
+    type: float
+    field: "Number of shares (m)"
+    required: true
+  operating_margin_5y_av:        
+    type: float
+    field: "Operating margin 5y av."
+    required: true
+  r_and_d:                       
+    type: float
+    field: "TTM R & D (m)"
+    required: false
+  tangibles:                     
+    type: float
+    field: "TTM Tangibles (m)"
+    required: true
+  tax_rate_paid_5y_av:           
+    type: float
+    field: "Tax rate (paid) 5y av."
+    required: false
+  ticker:                        
+    type: str
+    field: "TIDM"
+    required: true
+  total_equity:                  
+    type: float
+    field: "TTM Total equity (m)"
+    required: true
+  turnover_5y_av:                
+    type: float
+    field: "Turnover (m) 5y av."
+    required: true
+  turnover_perc_chg:             
+    type: float
+    field: "Turnover %chg"
+    required: true
+  turnover:                      
+    type: float
+    field: "TTM Turnover (m)"
+    required: true
+  cash:                          
+    type: float
+    field: "TTM Cash (m)"
+    required: true
+  close:
+    type: float
+    field: "Close"
+    required: true
+  capex_5y_av:
+    type: float
+    field: "Capex (m) 5y av."
+    required: true
+  r_and_d_5y_av:
+    type: float
+    field: "R & D (m) 5y av."
+    required: false
+  admin_expenses_5y_av:
+    type: float
+    field: "Admin. expenses (m) 5y av."
+    required: true
+  # currency:
+  #   type: str
+  #   field: "Currency (results)"
+  #   required: false

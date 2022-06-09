@@ -1,0 +1,15 @@
+{
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "python.formatting.provider": "black",
+    "python.analysis.extraPaths": [
+        "/workspace/valuation_data_pipeline",
+    ],
+    "python.autoComplete.extraPaths": [
+        "/workspace/valuation_data_pipeline",
+    ],
+    "python.linting.enabled": false
+}

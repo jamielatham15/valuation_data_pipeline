@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+  valuation_data_pipeline:
+    build:
+      context: ../
+      dockerfile: projects/valuation_frontend/Dockerfile
+    network_mode: host
+    env_file: ../.env
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity
+  valuation_data_pipeline:
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    network_mode: host
+    env_file: ../.env
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity

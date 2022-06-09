@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+    <p class="lead">Stocks which return a 10% capitalization rate.</p>
+</div>
+
+<p>Warren Buffet&#39;s &quot;ewner earnings&quot; multiplied by 10. The intuition here is that you should pay no more
+    than 10 years of future earnings in order to get a minimum 10% capitalization rate. It takes no account of growth or
+    the present value of future cashflows.[^2]</p>
+<p>Owner earnings is calculated as:</p>
+<pre><code>Net Income
++ Depreciation &amp; Amortization
++ Net Change: Accounts Receivable
++ Net Change: Accounts Payable
++ Income Tax
++ Maintenance Capital Expenditures
+<span class="hljs-section">= Owner Earnings</span>
+</code></pre>
+
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

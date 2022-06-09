@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+    <p class="lead">The total time to fully recuping the expense of an investment.</p>
+</div>
+
+<p> Here it is the sum of free cash flows compounded by
+    the company&#39;s growth rate for eight years. The period of eight years is to provide a margin of safety. According
+    to Charlie Munger, a private company typically sells for half the price of a public one, and public companies sell
+    for between 12 and 20 times their current free cash flow, or 16 on average. Half of 16 is 8, giving the
+    &quot;private&quot; sale price of a company. Accounts for growth but not the present value of future cashflows.
+    Also, growth is assumed to be static. For high growth companies this will produce valuation_metrics going to
+    infinity. [^3]</p>
+<p>Free cash flow can be calculated as:</p>
+<pre><code>Net Cash Provided by Operating Activities
++ Purchase of Property <span class="hljs-built_in">and</span> Equipment (a negative number)
++ Any Other Capital Expenditures for Maintenance <span class="hljs-built_in">and</span> <span class="hljs-built_in">Growth</span> (also negative numbers)
+= Free Cash Flow
+</code></pre>
+
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

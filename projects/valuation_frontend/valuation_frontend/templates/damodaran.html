@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+    <p class="lead">Implied Growth Rate.</p>
+</div>
+
+<p>An implied forward 1 year growth rate derived from the reinvestment rate and return on equity. It makes sense to use
+    an average net income value (e.g. past 5 years) to calculate ROE as this will be a big factor determining the
+    growth.[^1]</p>
+<pre><code>Reinvestment Rate = Retained Earnings / Current Earnings 
+
+Return <span class="hljs-keyword">on</span> Investment = ROE = Net Income / Book Value <span class="hljs-keyword">of</span> Equity
+
+Implied forward growth = Reinvestment Rate * Return <span class="hljs-keyword">on</span> Investment
+</code></pre>
+<p>To be conservative, this will be the growth rate in year 1 only. Years 2-5 will be 5%, and years 6-10 will be 2%.</p>
+
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}

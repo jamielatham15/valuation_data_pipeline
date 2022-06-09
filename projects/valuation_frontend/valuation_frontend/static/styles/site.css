@@ -1,0 +1,9 @@
+.center {
+    /* Center child horizontally*/
+    display: flex;
+    justify-content: center;
+  }
+
+.descriptionBox {
+    display: none;
+}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+    <p class="lead">A shorthand approach to discounted cashflow analysis.</p>
+</div>
+
+<p> Puts a price on a company&#39;s earnings over 10 years with a
+    minimum acceptable rate of return (MARR) of 15% per annum.</p>
+<p>Steps:</p>
+<ol>
+    <li>Find the future value of earnings compounded by the company&#39;s growth rate for 10 years. This is a forward 10
+        year EPS. </li>
+    <li>Assumes that the market will value the company at 2 times is growth rate. This is the future P/E ratio. </li>
+    <li>Multiply forward 10 year EPS by future P/E ratio to give future 10 year share price. </li>
+    <li>Back calculate what the price should be today, assuming a 15% return per annum. </li>
+    <li>Discount this to the present day, building in our MARR. Future 10 year share price / (1.15^10). </li>
+    <li>Divide the result by 2 to build in a 50% margin of safety. </li>
+</ol>
+<p>This method does account for growth and for the present value of earnings.</p>
+
+{% endblock %}
+
+{% block scripts %}
+
+{% endblock %}
