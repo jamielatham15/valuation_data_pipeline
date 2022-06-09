@@ -32,7 +32,7 @@ RUN /env/bin/pip install -r ./requirements.txt --no-deps
 FROM builder as final
 # Setup env
 COPY --from=builder /env /env
-COPY ./projects/valuation_frontend .
+COPY ./projects/valuation_frontend /app
 
-WORKDIR /valuation_frontend
+WORKDIR /app
 CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]

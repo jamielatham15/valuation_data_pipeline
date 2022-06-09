@@ -12,11 +12,11 @@ logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # download data
-# filepath, download_date = df.download_data()
-# logger.info("data file downloaded: %s", str(filepath))
+filepath, download_date = df.download_data()
+logger.info("data file downloaded: %s", str(filepath))
 
-filepath = Path("resources/data/Portfolio__1. Watchlist_Greenwald Valuation.csv")
-download_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+# filepath = Path("resources/data/Portfolio__1. Watchlist_Greenwald Valuation.csv")
+# download_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
 # soft transform
 filepath = dl.soft_transform(filepath, download_date)

@@ -50,6 +50,9 @@ RUN /env/bin/pip install -r ./requirements.txt --no-deps
 FROM builder as final
 # Setup env
 COPY --from=builder /env /env
-COPY ./projects/valuation_pipeline/ .
+COPY ./projects/valuation_pipeline/valuation_pipeline /app
+
+WORKDIR /app
+CMD ["python3", "runner.py"]
 
 
