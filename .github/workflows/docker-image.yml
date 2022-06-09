@@ -38,8 +38,7 @@ jobs:
           IMAGE_TAG: latest
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
-          -f ./projects/valuation_pipeline/Dockerfile \
-          ./projects/valuation_pipeline/ \
+          -f ./projects/valuation_pipeline/Dockerfile . \
           --build-arg '${{ secrets.DATA_HOST }}' \
           --build-arg '${{ secrets.DATA_USER }}' \
           --build-arg '${{ secrets.DATA_PASSWORD }}' \
