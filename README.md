@@ -6,18 +6,18 @@ Adapted from the following authors:
 - Phil Town and Danielle Town
 - Aswath Damodaran
 
-## TOC
+## Table of Contents
 - [Valuation Calculator](#valuation-calculator)
-  * [Valuation Formula](#valuation-formula)
-    + [Greenwald, Graham and Dodd Investing](#greenwald--graham-and-dodd-investing)
-    + [Damodaran, Growth Rates](#damodaran--growth-rates)
-    + [Town & Town, 10 Cap Value](#town---town--10-cap-value)
-    + [Town & Town, Payback Time](#town---town--payback-time)
-    + [Town & Town, Margin of Safety](#town---town--margin-of-safety)
+  * [Valuation Methods](#valuation-methods)
+    + [Greenwald, Graham and Dodd Investing](#greenwald-graham-and-dodd-investing)
+    + [Damodaran, Growth Rates](#damodaran-growth-rates)
+    + [Town & Town, 10 Cap Value](#town--town-10-cap-value)
+    + [Town & Town, Payback Time](#town--town-payback-time)
+    + [Town & Town, Margin of Safety](#town--town-margin-of-safety)
   * [Data](#data)
 - [Data Pipeline](#data-pipeline)
   * [AWS Setup](#aws-setup)
-  * [Provision EC2 w/ terraform](#provision-ec2-w--terraform)
+  * [Provision EC2 w/ terraform](#provision-ec2-w-terraform)
 
 ## Valuation Methods
 
@@ -51,7 +51,8 @@ Value of equity:
 EPV - nebt debt = value of equity
 ```
 
-### Damodaran, Growth Rates (**Coming Soon**)
+### Damodaran, Growth Rates
+ (**Coming Soon**)
 An implied forward 1 year growth rate derived from the reinvestment rate and return on equity. It makes sense to use an average net income value (e.g. past 5 years) to calculate ROE as this will be a big factor determining the growth.[^1]
 
 ```
@@ -63,8 +64,8 @@ Implied forward growth = Reinvestment Rate * Return on Investment
 ```
 To be conservative, this will be the growth rate in year 1 only. Years 2-5 will be 5%, and years 6-10 will be 2%.
 
-### Town & Town, 10 Cap Value (**Coming Soon**)
-Warren Buffet's "ewner earnings" multiplied by 10. The intuition here is that you should pay no more than 10 years of future earnings in order to get a minimum 10% capitalization rate. It takes no account of growth or the present value of future cashflows.[^2]
+### Town & Town, 10 Cap Value
+ (**Coming Soon**) Warren Buffet's "ewner earnings" multiplied by 10. The intuition here is that you should pay no more than 10 years of future earnings in order to get a minimum 10% capitalization rate. It takes no account of growth or the present value of future cashflows.[^2]
 
 Owner earnings is calculated as:
 
@@ -78,9 +79,8 @@ Net Income
 = Owner Earnings
 ```
 
-### Town & Town, Payback Time (**Coming Soon**)
-
-The total time to fully recuping the expense of an investment. Here it is the sum of free cash flows compounded by the company's growth rate for eight years. The period of eight years is to provide a margin of safety. According to Charlie Munger, a private company typically sells for half the price of a public one, and public companies sell for between 12 and 20 times their current free cash flow, or 16 on average. Half of 16 is 8, giving the "private" sale price of a company. Accounts for growth but not the present value of future cashflows. Also, growth is assumed to be static. For high growth companies this will produce valuation_metrics going to infinity. [^3]
+### Town & Town, Payback Time
+ (**Coming Soon**) The total time to fully recuping the expense of an investment. Here it is the sum of free cash flows compounded by the company's growth rate for eight years. The period of eight years is to provide a margin of safety. According to Charlie Munger, a private company typically sells for half the price of a public one, and public companies sell for between 12 and 20 times their current free cash flow, or 16 on average. Half of 16 is 8, giving the "private" sale price of a company. Accounts for growth but not the present value of future cashflows. Also, growth is assumed to be static. For high growth companies this will produce valuation_metrics going to infinity. [^3]
 
 Free cash flow can be calculated as:
 ```
@@ -90,8 +90,8 @@ Net Cash Provided by Operating Activities
 = Free Cash Flow
 ```
 
-### Town & Town, Margin of Safety (**Coming Soon**)
-A shorthand approach to discounted cashflow analysis. Puts a price on a company's earnings over 10 years with a minimum acceptable rate of return (MARR) of 15% per annum.
+### Town & Town, Margin of Safety
+(**Coming Soon**) A shorthand approach to discounted cashflow analysis. Puts a price on a company's earnings over 10 years with a minimum acceptable rate of return (MARR) of 15% per annum.
 
 Steps:
 1. Find the future value of earnings compounded by the company's growth rate for 10 years. This is a forward 10 year EPS. 
@@ -104,8 +104,6 @@ Steps:
 This method does account for growth and for the present value of earnings.
 
 ## Data
-
-Data must conform to the following format:
 
 | Column                      | Description                                                                                                                             | Unit             | Period         | Input for        |
 |-----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|------------------|----------------|------------------|
@@ -143,7 +141,7 @@ CREATE EXTENSION aws_s3 CASCADE;
 
 3. Create the appropriate IAM roles for RDS<->S3 access: [Using an IAM role to access an Amazon S3 bucket](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PostgreSQL.S3Import.html#aws_s3.table_import_from_s3)
 
-## Provision EC2 w/ terraform
+## Provision EC2 & ECR w/ terraform
 
 ```bash 
 $env:AWS_ACCESS_KEY_ID & $env:AWS_SECRET_ACCESS_KEY before running
