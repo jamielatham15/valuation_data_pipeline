@@ -1,14 +1,32 @@
-# Rule One Valuation Calculator
-Approximates the intrinsic value of stocks. For use as an initial screener to identify (possibly) undervalued stocks. Uses a number of shorthand valuation techniques to estimate intrinsic value and margin of safety.
+# Valuation Calculator
+Data pipeline and flask site to approximate the intrinsic value of stocks. Uses a number of shorthand valuation techniques to estimate intrinsic value and margin of safety.
 
 Adapted from the following authors:
+- Bruce Greenwald
 - Phil Town and Danielle Town
 - Aswath Damodaran
 
-## Valuation Formula
+## TOC
+- [Valuation Calculator](#valuation-calculator)
+  * [Valuation Formula](#valuation-formula)
+    + [Greenwald, Graham and Dodd Investing](#greenwald--graham-and-dodd-investing)
+    + [Damodaran, Growth Rates](#damodaran--growth-rates)
+    + [Town & Town, 10 Cap Value](#town---town--10-cap-value)
+    + [Town & Town, Payback Time](#town---town--payback-time)
+    + [Town & Town, Margin of Safety](#town---town--margin-of-safety)
+  * [Data](#data)
+- [Data Pipeline](#data-pipeline)
+  * [AWS Setup](#aws-setup)
+  * [Provision EC2 w/ terraform](#provision-ec2-w--terraform)
+
+## Valuation Methods
 
 ### Greenwald, Graham and Dodd Investing
-Greenwald's valuation method rejects speculative esitmates of future cashflows in favour of a "Graham and Dodd" approach updated for today's market conditions. It rests on two pillars: the reproduction value of a company's assets and its so-called "sustainable" earnings power. Greenwald looks at the ratio of assets to earnings power in order to identify companies with structural advantages in the market (Buffet's "moat"). Importantly, growth is not considered as a factor and significant adjustments are made to infer what a company's assets and earnings would be if they stopped reinvesting.
+Greenwald's adopts a "Graham and Dodd" approach updated for modern market conditions. It rests on two pillars:
+ - The reproduction value of a company's assets
+ - So-called "sustainable" earnings power. 
+ 
+ Greenwald looks at the ratio of assets to earnings power in order to identify companies with structural advantages in the market (Buffet's "moat"). Importantly, growth is not considered as a factor and significant adjustments are made to infer what a company's assets and earnings would be if they stopped reinvesting.
 
 Assets are calculated as:
 
@@ -28,10 +46,12 @@ Earnings power value is calculated as:
 \ Weighted average cost of capital (WACC)
 ```
 
-`EPV - nebt debt = value of equity`
+Value of equity:
+```
+EPV - nebt debt = value of equity
+```
 
-
-### Damodaran, Growth Rates
+### Damodaran, Growth Rates (**Coming Soon**)
 An implied forward 1 year growth rate derived from the reinvestment rate and return on equity. It makes sense to use an average net income value (e.g. past 5 years) to calculate ROE as this will be a big factor determining the growth.[^1]
 
 ```
@@ -43,7 +63,7 @@ Implied forward growth = Reinvestment Rate * Return on Investment
 ```
 To be conservative, this will be the growth rate in year 1 only. Years 2-5 will be 5%, and years 6-10 will be 2%.
 
-### Town & Town, 10 Cap Value
+### Town & Town, 10 Cap Value (**Coming Soon**)
 Warren Buffet's "ewner earnings" multiplied by 10. The intuition here is that you should pay no more than 10 years of future earnings in order to get a minimum 10% capitalization rate. It takes no account of growth or the present value of future cashflows.[^2]
 
 Owner earnings is calculated as:
@@ -58,7 +78,7 @@ Net Income
 = Owner Earnings
 ```
 
-### Town & Town, Payback Time
+### Town & Town, Payback Time (**Coming Soon**)
 
 The total time to fully recuping the expense of an investment. Here it is the sum of free cash flows compounded by the company's growth rate for eight years. The period of eight years is to provide a margin of safety. According to Charlie Munger, a private company typically sells for half the price of a public one, and public companies sell for between 12 and 20 times their current free cash flow, or 16 on average. Half of 16 is 8, giving the "private" sale price of a company. Accounts for growth but not the present value of future cashflows. Also, growth is assumed to be static. For high growth companies this will produce valuation_metrics going to infinity. [^3]
 
@@ -70,7 +90,7 @@ Net Cash Provided by Operating Activities
 = Free Cash Flow
 ```
 
-### Town & Town, Margin of Safety
+### Town & Town, Margin of Safety (**Coming Soon**)
 A shorthand approach to discounted cashflow analysis. Puts a price on a company's earnings over 10 years with a minimum acceptable rate of return (MARR) of 15% per annum.
 
 Steps:
