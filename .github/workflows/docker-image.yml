@@ -15,6 +15,7 @@ jobs:
   build:
     name: Build Image
     runs-on: ubuntu-latest
+    environment: github_actions
 
     steps:
       - name: Check out
