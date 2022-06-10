@@ -34,19 +34,36 @@ jobs:
       - name: Build, tag, and push image to Amazon ECR
         env:
           ECR_REGISTRY: '${{ steps.login-ecr.outputs.registry }}'
-          ECR_REPOSITORY: "app_container_registry"
+          ECR_REPOSITORY: "valuation_pipeline"
           IMAGE_TAG: latest
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
           -f ./projects/valuation_pipeline/Dockerfile . \
-          --build-arg '${{ secrets.DATA_HOST }}' \
-          --build-arg '${{ secrets.DATA_USER }}' \
-          --build-arg '${{ secrets.DATA_PASSWORD }}' \
-          --build-arg '${{ secrets.AWS_ACCESS_KEY }}' \
-          --build-arg '${{ secrets.AWS_SECRET_KEY }}' \
-          --build-arg '${{ secrets.AWS_BUCKET_NAME }}' \
-          --build-arg '${{ secrets.AWS_ACCOUNT_ID }}' \
-          --build-arg '${{ secrets.AWS_RDS_PASSWORD }}' \
-          --build-arg '${{ secrets.AWS_RDS_USER }}' \
-          --build-arg '${{ secrets.AWS_RDS_HOST }}'
+          --build-arg DATA_HOST='${{ secrets.DATA_HOST }}' \
+          --build-arg DATA_USER='${{ secrets.DATA_USER }}' \
+          --build-arg DATA_PASSWORD='${{ secrets.DATA_PASSWORD }}' \
+          --build-arg AWS_ACCESS_KEY='${{ secrets.AWS_ACCESS_KEY }}' \
+          --build-arg AWS_SECRET_KEY='${{ secrets.AWS_SECRET_KEY }}' \
+          --build-arg AWS_BUCKET_NAME='${{ secrets.AWS_BUCKET_NAME }}' \
+          --build-arg AWS_ACCOUNT_ID='${{ secrets.AWS_ACCOUNT_ID }}' \
+          --build-arg AWS_RDS_PASSWORD='${{ secrets.AWS_RDS_PASSWORD }}' \
+          --build-arg AWS_RDS_USER='${{ secrets.AWS_RDS_USER }}' \
+          --build-arg AWS_RDS_HOST='${{ secrets.AWS_RDS_HOST }}'
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          
+      - name: Build, tag, and push image to Amazon ECR
+        env:
+          ECR_REGISTRY: '${{ steps.login-ecr.outputs.registry }}'
+          ECR_REPOSITORY: "valuation_frontend"
+          IMAGE_TAG: latest
+        run: |
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
+          -f ./projects/valuation_frontend/Dockerfile . \
+          --build-arg AWS_ACCESS_KEY='${{ secrets.AWS_ACCESS_KEY }}' \
+          --build-arg AWS_SECRET_KEY='${{ secrets.AWS_SECRET_KEY }}' \
+          --build-arg AWS_BUCKET_NAME='${{ secrets.AWS_BUCKET_NAME }}' \
+          --build-arg AWS_ACCOUNT_ID='${{ secrets.AWS_ACCOUNT_ID }}' \
+          --build-arg AWS_RDS_PASSWORD='${{ secrets.AWS_RDS_PASSWORD }}' \
+          --build-arg AWS_RDS_USER='${{ secrets.AWS_RDS_USER }}' \
+          --build-arg AWS_RDS_HOST='${{ secrets.AWS_RDS_HOST }}'
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
