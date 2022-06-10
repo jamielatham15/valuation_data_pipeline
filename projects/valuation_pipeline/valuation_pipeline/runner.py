@@ -1,6 +1,6 @@
 from data_fetcher import app as df
-from valuation_data_pipeline.data_loader import app as dl
-from valuation_data_pipeline.valuation_metrics import app as vm
+from data_loader import app as dl
+from valuation_metrics import app as vm
 from common.orm import truncate_table
 import logging
 import sys

@@ -10,6 +10,7 @@ python = "^3.9"
 selenium = "^4.2.0"
 SQLAlchemy = "^1.4.36"
 PyYAML = "^6.0"
+psycopg2 = "^2.9.3"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

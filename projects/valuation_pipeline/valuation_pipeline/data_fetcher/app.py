@@ -9,7 +9,7 @@ from common.config import config
 from pathlib import Path
 from datetime import datetime
 
-def set_chrome_options(self) -> None:
+def set_chrome_options() -> None:
     """Sets chrome options for Selenium.
     Chrome options for headless browser is enabled.
     """

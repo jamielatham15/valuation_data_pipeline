@@ -33,7 +33,9 @@ FROM builder as final
 # Setup env
 COPY --from=builder /env /env
 RUN true
-COPY ./projects/valuation_frontend /app
+COPY ./projects/valuation_frontend/valuation_frontend/ /app
 
 WORKDIR /app
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "valuation_frontend.app:app"]
+ENV FLASK_APP=app
+# CMD ["flask", "run", "--host=0.0.0.0", "--port=80"]
+CMD ["gunicorn", "-b", "0.0.0.0:80", "app:app"]
