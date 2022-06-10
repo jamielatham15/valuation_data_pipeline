@@ -22,8 +22,8 @@ resource "aws_instance" "app_server" {
   }
 }
 
-resource "aws_ecr_repository" "app_container_registry" {
-  name                 = "app_container_registry"
+resource "aws_ecr_repository" "valuation_pipeline_ecr" {
+  name                 = "valuation_pipeline"
   image_tag_mutability = "MUTABLE"
 
   image_scanning_configuration {
@@ -34,6 +34,20 @@ resource "aws_ecr_repository" "app_container_registry" {
     Name = "valuation_data_pipeline"
   }
 }
+
+resource "aws_ecr_repository" "valuation_frontend_ecr" {
+  name                 = "valuation_frontend"
+  image_tag_mutability = "MUTABLE"
+
+  image_scanning_configuration {
+    scan_on_push = true
+  }
+
+  tags = {
+    Name = "valuation_data_pipeline"
+  }
+}
+
 
 /*
 resource "aws_db_instance" "app_db" {
