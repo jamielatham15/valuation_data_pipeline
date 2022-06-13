@@ -1,6 +1,7 @@
-# https://screeningforvalue.com/greenwald
-
 # Value Screeners
+
+**Now live at: https://screeningforvalue.com/greenwald**
+
 Data pipeline and flask site to approximate the intrinsic value of stocks. Uses a number of shorthand valuation techniques to estimate intrinsic value and margin of safety.
 
 Adapted from the following authors:
