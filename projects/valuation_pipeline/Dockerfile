@@ -55,5 +55,3 @@ COPY ./projects/valuation_pipeline/valuation_pipeline /app
 
 WORKDIR /app
 CMD ["python3", "runner.py"]
-
-

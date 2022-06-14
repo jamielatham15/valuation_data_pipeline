@@ -75,10 +75,9 @@ def download_data():
         except (ElementNotInteractableException, IndexError):
             pass
     
-    filepath = ''
     most_recent = 0
     for file in get_downloaded_files():
-        if (time:=file.stat().st_mtime) > most_recent:
+        if (time:=file.stat().st_mtime) >= most_recent:
             most_recent = time
             filepath = file
 
