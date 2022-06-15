@@ -132,9 +132,9 @@ class EPV:
         return self.earnings_power / self.wacc
 
 def business_category(assets, epv):
-    if (epv_to_assets:=(epv - assets) / epv) >= 0.25:
+    if (epv_to_assets:=(epv - assets) / epv) >= 0.25 and epv > 0:
         return "advantage"
-    elif epv_to_assets <= -0.2:
+    elif epv_to_assets <= -0.25 or epv < 0:
         return "decline"
     else:
         return "balance"
