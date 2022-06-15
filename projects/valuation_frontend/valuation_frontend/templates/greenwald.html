@@ -2,23 +2,23 @@
 
 {% block content %}
 
-<div class="container"> 
+<div class="container">
   <div class="row">
     <p class="lead">Graham and Dodd Investing.</p>
   </div>
 
   <div class="row">
-  <p>Greenwald&#39;s valuation methods reject speculative esitmates of future cashflows in favour of a &quot;Graham and
-    Dodd&quot; approach updated for modern market conditions. It rests on two pillars:</p>
-      <ul>
-        <li>the reproduction value of a company&#39;s assets</li>
-        <li>so-called &quot;sustainable&quot; earnings power.</li>
-      </ul>
-  <p>
-    to earnings power in order to identify companies with structural advantages in the market (Buffet&#39;s
-    &quot;moat&quot;). Importantly, growth is not considered as a factor and significant adjustments are made to infer
-    what a company&#39;s assets and earnings would be if they stopped reinvesting.
-  </p>
+    <p>Greenwald&#39; rejects esitmates of future cashflows in favour of a &quot;Graham and
+      Dodd&quot; approach. It rests on two pillars:</p>
+    <ul>
+      <li>The reproduction value of a company&#39;s assets</li>
+      <li>A company's &quot;sustainable&quot; earnings power</li>
+    </ul>
+    <p>
+      Earnings power greater than assets can be the result of superior management and/or structural barriers to entry.
+      Importantly, growth is not considered as a factor and significant adjustments are made to infer
+      what a company&#39;s assets and earnings would be if they stopped reinvesting for growth.
+    </p>
   </div>
 
   <div class="row">
@@ -27,7 +27,7 @@
         <div class="card-header">Asset Calculation</div>
         <div class="card-body">
           <p class="card-text">
-            <pre><code>Total assets<br>+ R&D costs<br>+ SG&A expenses<br>- Total liabilities
+          <pre><code>Total assets<br>+ R&D costs<br>+ SG&A expenses<br>- Total liabilities
             </code></pre>
           </p>
         </div>
@@ -37,7 +37,8 @@
       <div class="card border-primary mb-3" style="max-width: 20rem;">
         <div class="card-header">Earnings Power Value Calculation</div>
         <div class="card-body">
-          <p class="card-text"><pre><code>(Normalized EBIT<br>- Average tax rate<br>- "Maintainance Capex")<br>\ WACC<br>Value of equity = EPV - Nebt debt</code></pre>
+          <p class="card-text">
+          <pre><code>Normalized EBIT<br>- Average tax rate<br>- "Maintainance Capex"<br>\ WACC<br>- Nebt debt</code></pre>
           </p>
         </div>
       </div>
@@ -45,56 +46,56 @@
     <div class="col-lg-4">
       <div class="card border-primary mb-3">
         <div class="card-header">Categories</div>
-          <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                  Competative advantage or superior management
-                </button>
-              </h2>
-              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                data-bs-parent="#accordionExample" style="">
-                <div class="accordion-body">
-                  <strong></strong>Earnings power is greater than 25% asset value. Consistently superior earnings
-                  power can be the result of superior management and/or structural barriers to entry. Note that no
-                  adjustments are
-                  made for cyclical industies.
-                </div>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                Advantage
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample" style="">
+              <div class="accordion-body">
+                <strong></strong>Earnings power is greater than 25% asset value. Consistently superior earnings
+                power can be the result of superior management and/or structural barriers to entry. Note that no
+                adjustments are
+                made for cyclical industies.
               </div>
             </div>
           </div>
-          <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Free entry and industry balance
-                </button>
-              </h2>
-              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                data-bs-parent="#accordionExample" style="">
-                <div class="accordion-body">
-                  <strong></strong>Earnings power is within
-                  25% of asset value. The company is well run and operating in an efficient market.
-                </div>
+        </div>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Balance
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample" style="">
+              <div class="accordion-body">
+                <strong></strong>Free entry and industry balance. Earnings power is within
+                25% of asset value. The company is well run and operating in an efficient market.
               </div>
             </div>
           </div>
-          <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Poor management or industry decline
-                </button>
-              </h2>
-              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                data-bs-parent="#accordionExample" style="">
-                <div class="accordion-body">
-                  <strong></strong>The company is not
-                  producing a sufficient return on its assets. It is likely a "value trap".
-                </div>
+        </div>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Decline
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample" style="">
+              <div class="accordion-body">
+                <strong></strong>The company is not
+                producing a sufficient return on its assets. It is likely a "value trap" with poor management or
+                industry decline.
               </div>
             </div>
           </div>
@@ -102,47 +103,48 @@
       </div>
     </div>
   </div>
+</div>
 
-  <hr>
+<hr>
 
-  <div class="row">
-    <div class="col-lg-4">
-      <div class="btn-groupl" role="group" aria-label="Basic radio toggle button group">
-        <input type="radio" class="btn-check" name="btnradio" id="advantage" autocomplete="off" checked="">
-        <label class="btn btn-outline-primary" for="advantage">Advantage</label>
-        <input type="radio" class="btn-check" name="btnradio" id="balance" autocomplete="off" checked="">
-        <label class="btn btn-outline-primary" for="balance">Balance</label>
-        <input type="radio" class="btn-check" name="btnradio" id="decline" autocomplete="off" checked="">
-        <label class="btn btn-outline-primary" for="decline">Decline</label>
-        <input type="radio" class="btn-check" name="btnradio" id="all" autocomplete="off" checked="">
-        <label class="btn btn-outline-primary" for="all">All</label>
-      </div>
-      <br />
-      <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-        <label class="form-check-label" for="flexSwitchCheckDefault">Upside only</label>
-      </div>
+<div class="row">
+  <div class="col-lg-4">
+    <div class="btn-groupl" role="group" aria-label="Basic radio toggle button group">
+      <input type="radio" class="btn-check" name="btnradio" id="advantage" autocomplete="off" checked="">
+      <label class="btn btn-outline-primary" for="advantage">Advantage</label>
+      <input type="radio" class="btn-check" name="btnradio" id="balance" autocomplete="off" checked="">
+      <label class="btn btn-outline-primary" for="balance">Balance</label>
+      <input type="radio" class="btn-check" name="btnradio" id="decline" autocomplete="off" checked="">
+      <label class="btn btn-outline-primary" for="decline">Decline</label>
+      <input type="radio" class="btn-check" name="btnradio" id="all" autocomplete="off" checked="">
+      <label class="btn btn-outline-primary" for="all">All</label>
+    </div>
+    <br />
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+      <label class="form-check-label" for="flexSwitchCheckDefault">Upside only</label>
     </div>
   </div>
+</div>
 
-  <br>
+<br>
 
-  <div class="row">
-    <table id="data" class="display compact" style="width:100%">
-      <thead>
-        <tr>
-          <th>Company</th>
-          <th>Asset Value (m)</th>
-          <th>Earnings Power Value (m)</th>
-          <th>WACC</th>
-          <th>Buy Price</th>
-          <th>Upside</th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
-  </div>
+<div class="row">
+  <table id="data" class="display compact" style="width:100%">
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Asset Value (m)</th>
+        <th>Earnings Power Value (m)</th>
+        <th>WACC</th>
+        <th>Buy Price</th>
+        <th>Upside</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
 </div>
 
 {% endblock %}
@@ -153,7 +155,7 @@
   function getCheckedButton() {
     return $('input[name="btnradio"]:checked').attr('id');
   }
-  
+
   function getCheckedSwitch() {
     return $('input[class="form-check-input"]:checked').length;
   }

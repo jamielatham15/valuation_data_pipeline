@@ -10,7 +10,7 @@
             "request": "launch",
             "module": "flask",
             "env": {
-                "FLASK_APP": "valuation_data_pipeline/flask_frontend/app.py",
+                "FLASK_APP": "projects/valuation_frontend/valuation_frontend/app.py",
                 "FLASK_ENV": "development"
             },
             "args": [
